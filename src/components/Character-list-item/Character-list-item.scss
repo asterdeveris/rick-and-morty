@@ -1,0 +1,20 @@
+.card {
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2), 0px 3px 4px rgba(0, 0, 0, 0.12),
+    0px 2px 4px rgba(0, 0, 0, 0.14);
+  border-radius: 4px;
+  margin-bottom: 5px;
+
+  .label {
+    margin: 12px 16px;
+  }
+  .character-name {
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 2rem;
+  }
+
+  .character-type {
+    color: rgba(0, 0, 0, 0.6);
+    line-height: 1.5rem;
+  }
+}
