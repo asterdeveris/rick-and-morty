@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Character-details.scss";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { getCharacter } from "rickmortyapi";
 import spinner from "../Character-list/DoubleRing.svg";
 
@@ -22,6 +22,9 @@ const CharacterDetails = () => {
     <img src={spinner} />
   ) : (
     <div className="info">
+      <Link to="/">
+        <p className="back-to-main-link">Go back</p>
+      </Link>
       <div className="info-header">
         <img src={image} alt="image of a character" />
         <h1>{name}</h1>
