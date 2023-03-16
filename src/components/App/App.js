@@ -1,15 +1,16 @@
 import React from "react";
+import { Route, Routes } from "react-router-dom";
+import MainPage from "../Main-page/main-page";
 import CharacterDetails from "../Character-details/Character-details";
-import CharacterList from "../Character-list/Character-list";
-import Header from "../Header/Header";
 import "./App.scss";
 
 function App() {
   return (
     <div className="container">
-      <Header />
-      <CharacterList />
-      <CharacterDetails />
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/character-details" element={<CharacterDetails />} />
+      </Routes>
     </div>
   );
 }
