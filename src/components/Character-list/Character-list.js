@@ -19,14 +19,21 @@ const CharacterList = () => {
 
   const populatedList = listOfCharacters.map(({ name, species, image, id }) => {
     return (
-      <CharacterListItem name={name} image={image} species={species} key={id} />
+      <CharacterListItem
+        name={name}
+        image={image}
+        species={species}
+        key={id}
+        id={id}
+      />
     );
   });
 
-  if (isLoading) {
-    return <img src={spinner} />;
-  }
-  return <div className="list-container">{populatedList}</div>;
+  return isLoading ? (
+    <img src={spinner} />
+  ) : (
+    <div className="list-container">{populatedList}</div>
+  );
 };
 
 export default CharacterList;

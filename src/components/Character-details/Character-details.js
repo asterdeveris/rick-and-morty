@@ -1,35 +1,53 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Character-details.scss";
+import { useParams } from "react-router-dom";
+import { getCharacter } from "rickmortyapi";
+import spinner from "../Character-list/DoubleRing.svg";
 
 const CharacterDetails = () => {
-  return (
+  const { id } = useParams();
+  const [character, setCharacter] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
+  const { name, gender, image, species, status, type, origin } = character;
+
+  useEffect(() => {
+    (async () => {
+      const character = await getCharacter(+id);
+      setCharacter(character.data);
+      setIsLoading(false);
+    })();
+  }, []);
+
+  return isLoading ? (
+    <img src={spinner} />
+  ) : (
     <div className="info">
       <div className="info-header">
-        <img src="/" alt="image of a character" />
-        <h1>Rick Sanchez</h1>
+        <img src={image} alt="image of a character" />
+        <h1>{name}</h1>
       </div>
       <div className="info-details">
         <h2>Information</h2>
         <ul className="info-list">
           <li>
             <h3>Gender</h3>
-            <p>Male</p>
+            <p>{gender}</p>
           </li>
           <li>
             <h3>Status</h3>
-            <p>Alive</p>
+            <p>{status}</p>
           </li>
           <li>
-            <h3>Sh3ecie</h3>
-            <p>Human</p>
+            <h3>Species</h3>
+            <p>{species}</p>
           </li>
           <li>
             <h3>Origin</h3>
-            <p>Earth(C-137)</p>
+            <p>{origin.name}</p>
           </li>
           <li>
-            <h3>Tyh3e</h3>
-            <p>Unknown</p>
+            <h3>Type</h3>
+            <p>{type}</p>
           </li>
         </ul>
       </div>
