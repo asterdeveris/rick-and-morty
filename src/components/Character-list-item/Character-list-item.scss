@@ -1,3 +1,5 @@
+@import "../../breakpoints.scss";
+
 .card {
   box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2), 0px 3px 4px rgba(0, 0, 0, 0.12),
     0px 2px 4px rgba(0, 0, 0, 0.14);
@@ -5,11 +7,23 @@
   margin-bottom: 5px;
   width: 240px;
 
+  @include sm {
+    & {
+      width: 312px;
+    }
+  }
+
   img {
     width: 100%;
     height: 168px;
     object-fit: cover;
     border-radius: 4px 4px 0 0;
+
+    @include sm {
+      & {
+        height: 232px;
+      }
+    }
   }
 
   .label {
@@ -19,6 +33,7 @@
     font-size: 1.5rem;
     font-weight: 500;
     line-height: 2rem;
+    color: #081f32;
   }
 
   .character-species {

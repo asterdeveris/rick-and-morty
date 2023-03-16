@@ -1,3 +1,5 @@
+@import "../../breakpoints.scss";
+
 .search {
   width: 100%;
   position: relative;
@@ -15,5 +17,22 @@
     width: 100%;
     padding: 16px 16px 16px 50px;
     font-size: 1.2rem;
+  }
+
+  @include xl {
+    & {
+      width: 90%;
+    }
+  }
+
+  @include md {
+    & {
+      width: 500px;
+    }
+  }
+  @include sm {
+    & {
+      width: 312px;
+    }
   }
 }

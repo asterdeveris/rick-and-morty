@@ -22,7 +22,8 @@ const MainPage = () => {
       return arr;
     } else {
       return arr.filter(
-        (character) => character.name.indexOf(handleInput) > -1
+        (character) =>
+          character.name.toLowerCase().indexOf(handleInput.toLowerCase()) > -1
       );
     }
   };
