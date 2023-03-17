@@ -20,12 +20,18 @@
   .back-to-main-link {
     position: fixed;
     top: 24px;
-    left: 50px;
+    left: 70px;
     font-family: "Karla", sans-serif;
     font-size: 1.3rem;
     font-weight: 700;
     text-transform: uppercase;
-    color: #081f32;
+    color: black;
+
+    img {
+      position: absolute;
+      left: -32px;
+      top: -3px;
+    }
 
     @include sm {
       & {

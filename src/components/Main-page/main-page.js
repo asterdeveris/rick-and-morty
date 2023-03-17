@@ -6,16 +6,21 @@ import { getCharacters } from "rickmortyapi";
 const MainPage = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [listOfCharacters, setListOfCharacters] = useState([]);
-  const [handleInput, setHandleInput] = useState("");
+  const [handleInput, setHandleInput] = useState(
+    localStorage.getItem("searchInput") || ""
+  );
 
   useEffect(() => {
-    const func = async () => {
+    (async () => {
       const res = await getCharacters();
       setListOfCharacters(res.data.results);
       setIsLoading(false);
-    };
-    func();
+    })();
   }, []);
+
+  useEffect(() => {
+    localStorage.setItem("searchInput", handleInput);
+  }, [handleInput]);
 
   const searchCharacter = (arr, handleInput) => {
     if (handleInput.length === 0) {
@@ -33,9 +38,10 @@ const MainPage = () => {
   };
 
   const filteredCharacters = searchCharacter(listOfCharacters, handleInput);
+
   return (
     <>
-      <Header onSearchChange={onSearchChange} />
+      <Header onSearchChange={onSearchChange} handleInput={handleInput} />
       <CharacterList
         listOfCharacters={filteredCharacters}
         isLoading={isLoading}

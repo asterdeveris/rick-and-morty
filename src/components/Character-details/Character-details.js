@@ -3,6 +3,7 @@ import "./Character-details.scss";
 import { useParams, Link } from "react-router-dom";
 import { getCharacter } from "rickmortyapi";
 import spinner from "../Character-list/DoubleRing.svg";
+import arrowIcon from "./arrow_back.svg";
 
 const CharacterDetails = () => {
   const { id } = useParams();
@@ -23,7 +24,10 @@ const CharacterDetails = () => {
   ) : (
     <div className="info">
       <Link to="/">
-        <p className="back-to-main-link">Go back</p>
+        <div className="back-to-main-link">
+          <img src={arrowIcon} />
+          Go back
+        </div>
       </Link>
       <div className="info-header">
         <img src={image} alt="image of a character" />
