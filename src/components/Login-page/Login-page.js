@@ -4,6 +4,10 @@ import arrowIcon from "../Character-details/arrow_back.svg";
 import "./Login-page.scss";
 
 const LoginPage = () => {
+  const googleLogIn = () => {
+    window.open("http://localhost:5000/auth/google", "_self");
+  };
+
   return (
     <div className="login-page">
       <Link to="/">
@@ -13,7 +17,7 @@ const LoginPage = () => {
         </div>
       </Link>
       <h1>Log in</h1>
-      <button>Continue with Google</button>
+      <button onClick={googleLogIn}>Continue with Google</button>
       <button>Continue with Facebook</button>
     </div>
   );
