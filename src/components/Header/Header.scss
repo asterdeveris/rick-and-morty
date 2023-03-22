@@ -17,4 +17,10 @@
       width: 70%;
     }
   }
+
+  @include sm {
+    & {
+      margin-top: 20%;
+    }
+  }
 }

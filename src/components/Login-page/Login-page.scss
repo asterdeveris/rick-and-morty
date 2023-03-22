@@ -7,34 +7,18 @@
   align-items: left;
   vertical-align: middle;
   height: 100vh;
+  width: 400px;
 
-  .back-to-main-link {
-    position: fixed;
-    top: 24px;
-    left: 70px;
-    font-family: "Karla", sans-serif;
-    font-size: 1.3rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: black;
-
-    img {
-      position: absolute;
-      left: -32px;
-      top: -3px;
-    }
-
-    @include sm {
-      & {
-        left: 24px;
-      }
+  @include sm {
+    & {
+      width: 90%;
     }
   }
 
   button {
     padding: 20px;
     margin-bottom: 15px;
-    width: 400px;
+    max-width: 400px;
     border: 2px solid #d6d6d6;
     background-color: white;
     border-radius: 5px;

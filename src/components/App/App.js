@@ -36,15 +36,19 @@ function App() {
     getUser();
   }, []);
 
-  console.log(user);
   return (
     <div className="container">
-      <Navbar user={user} />
       <Routes>
-        <Route path="/" element={<MainPage />} />
+        <Route path="/" element={<MainPage user={user} />} />
         <Route
           path="/character-details/:id"
-          element={user ? <CharacterDetails /> : <Navigate to="/login-page" />}
+          element={
+            user ? (
+              <CharacterDetails user={user} />
+            ) : (
+              <Navigate to="/login-page" />
+            )
+          }
         />
         <Route
           path="/login-page"

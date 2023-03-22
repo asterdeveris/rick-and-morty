@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Header from "../Header/Header";
 import CharacterList from "../Character-list/Character-list";
+import Navbar from "../Navbar/Navbar";
 import { getCharacters } from "rickmortyapi";
 
-const MainPage = () => {
+const MainPage = ({ user }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [listOfCharacters, setListOfCharacters] = useState([]);
   const [handleInput, setHandleInput] = useState(
@@ -41,6 +42,7 @@ const MainPage = () => {
 
   return (
     <>
+      <Navbar user={user} isMainPage={true} />
       <Header onSearchChange={onSearchChange} handleInput={handleInput} />
       <CharacterList
         listOfCharacters={filteredCharacters}
