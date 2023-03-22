@@ -1,5 +1,6 @@
 import React from "react";
 import "./Login-page.scss";
+import googleIcon from "./icons/search.png";
 
 const LoginPage = () => {
   const googleLogIn = () => {
@@ -8,9 +9,13 @@ const LoginPage = () => {
 
   return (
     <div className="login-page">
-      <h1>Log in</h1>
-      <button onClick={googleLogIn}>Continue with Google</button>
-      <button>Continue with Facebook</button>
+      <h1>Please, login before continue</h1>
+      <button onClick={googleLogIn}>
+        <span>
+          <img src={googleIcon} />
+        </span>
+        Continue with Google
+      </button>
     </div>
   );
 };
