@@ -4,9 +4,6 @@ import arrowIcon from "./arrow_back.svg";
 import "./Navbar.scss";
 
 const Navbar = ({ isMainPage }) => {
-  const logOut = () => {
-    window.open("http://localhost:5000/auth/logout", "_self");
-  };
   return (
     <nav className="navbar">
       <Link to="/">

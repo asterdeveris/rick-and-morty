@@ -9,6 +9,7 @@ function App() {
     <div className="container">
       <Routes>
         <Route path="/" element={<MainPage />} />
+        <Route path="/rick-and-morty" element={<MainPage />} />
         <Route path="/character-details/:id" element={<CharacterDetails />} />
       </Routes>
     </div>

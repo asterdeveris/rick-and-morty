@@ -4,7 +4,7 @@ import CharacterList from "../Character-list/Character-list";
 import Navbar from "../Navbar/Navbar";
 import { getCharacters } from "rickmortyapi";
 
-const MainPage = ({ user }) => {
+const MainPage = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [listOfCharacters, setListOfCharacters] = useState([]);
   const [handleInput, setHandleInput] = useState(
@@ -42,7 +42,7 @@ const MainPage = ({ user }) => {
 
   return (
     <>
-      <Navbar user={user} isMainPage={true} />
+      <Navbar isMainPage={true} />
       <Header onSearchChange={onSearchChange} handleInput={handleInput} />
       <CharacterList
         listOfCharacters={filteredCharacters}
