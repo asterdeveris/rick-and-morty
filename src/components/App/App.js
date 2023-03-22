@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Route, Routes, Navigate } from "react-router-dom";
+import React from "react";
+import { Route, Routes } from "react-router-dom";
 import MainPage from "../Main-page/main-page";
 import CharacterDetails from "../Character-details/Character-details";
 import "./App.scss";
@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="container">
       <Routes>
-        <Route path="/" element={<MainPage user={user} />} />
+        <Route path="/" element={<MainPage />} />
         <Route path="/character-details/:id" element={<CharacterDetails />} />
       </Routes>
     </div>
